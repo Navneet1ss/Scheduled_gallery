@@ -1,0 +1,37 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <%= link_to "Gallery-App", root_path, class: "navbar-brand bg-lg" %>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/"> </a>
+            <%= link_to  root_path    do %>  <i class="fas fa-home nav-link  active">  Home  </i>  <%end%>
+          
+        </li>
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/albums/new">
+           <%= link_to  new_album_path  do %>  <i class="fas fa-plus-circle nav-link active "> Add Album   </i>  <%end%>
+           </a>
+         </li>
+      </ul>
+
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <% if user_signed_in? %>
+          <%= link_to current_user.email, edit_user_registration_path, class: "nav-item nav-link active" %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-item nav-link active" %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-item nav-link active" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-item nav-link active" %>
+                
+        <% end %>
+        
+      </ul>
+    </div>
+  </div>
+  
+</nav>

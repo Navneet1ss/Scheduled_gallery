@@ -1,0 +1,16 @@
+<%= form_with(model: album) do |form| %>
+
+
+  <div class="field mt-4">
+    <%= form.label :Photos %>
+    <%= form.file_field :photos, :multiple => true ,class: 'form-control' %>
+  </div>
+
+
+
+  <div class="actions mt-4 ">
+    <%= form.submit  %>
+  </div>
+<% end %>
+
+

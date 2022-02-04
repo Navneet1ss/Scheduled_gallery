@@ -1,0 +1,43 @@
+
+<p id="notice"><%= notice %></p>
+
+<div class='row'>
+  <div class='col-md-8'>
+    <div class="card">
+  <div class="card-header">
+    <strong>Title:</strong>
+    <%= @album.title %>
+  </div>
+    <div class="card-header">
+      <strong>Description:</strong>
+      <%= @album.description %>
+    </div>
+      <div class="card-body">
+    <%= image_tag (@album.cover_photo) %>
+    </div>
+  
+    <div class='card-footer'>
+      <%= link_to 'Back', root_path , class:'btn btn-dark active'%>
+      <%# <%= link_to 'Edit', edit_album_path , class:'btn btn-dark active'%>
+      <%# <%= link_to 'destroy', root_path , class:'btn btn-dark active'%>
+    </div>
+ </div>
+ </div>
+
+ <div class='row'>
+   <%@album.photos.each do |image|%>
+   <div class='col-md-3'>
+     <div class='card'>
+     <div class="card-header"> 
+    <%=link_to 'Zoom', image, class:'btn btn-success btn-sm' %> 
+    </div>
+        <div class='card-body'>
+         <%=image_tag(image)%>
+        </div>
+
+     </div>
+   </div>
+  <%end%>
+ </div>
+</div>
+

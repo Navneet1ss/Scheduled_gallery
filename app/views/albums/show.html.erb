@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+<div class='row'>
+  <div class='col-md-3'>
+    <div class="card">
+     <div class="card-header">
+       <strong>Title:</strong>
+       <%= @album.title %>
+     </div>
+     <div class="card-header">
+       <strong>Description:</strong>
+        <%= @album.description %>
+     </div>
+
+
+     
+     <div class="card-footer">
+      <strong>Tag:</strong>
+      <%=@album.all_tags%>
+    </div>
+
+
+
+
+     <div class="card-body">
+       <%if @album.cover_photo.attached? %>
+       <%= image_tag (@album.cover_photo) %>
+     </div>
+      <%end%>
+   </div>
+  </div>
+  <div class='row'>
+    <%@album.photos.each do |image|%>
+    <div class='col-md-3'>
+      <div class='card'>
+       <div class="card-header"> 
+          <%=link_to 'Zooms', image, class:'btn btn-success btn-sm'%> 
+           <%= link_to purge_image_path(image), method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-danger btn-sm" do %>
+             <i class="fas fa-trash"></i> <%end%>
+       </div>
+       <div class='card-body'>
+         <%=image_tag(image)%>
+       </div>
+     </div>
+    </div> 
+    <%end%>
+ </div>
+</div>
+
+<%= form_with(model: @album) do |form| %>
+  <div class="field mt-4">
+    <%= form.label :Photos %>
+    <%= form.file_field :photos, :multiple => true ,class: 'form-control' %>
+  </div>
+  <div class="actions mt-4 ">
+    <%= form.submit  %>
+  </div>
+<% end %>
+
+
+
+
+
+
+
