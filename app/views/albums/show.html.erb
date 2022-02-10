@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div class='row'>
-  <div class='col-md-3'>
+  <div class='col-md-8'>
     <div class="card">
      <div class="card-header">
        <strong>Title:</strong>
@@ -45,8 +45,22 @@
     <%end%>
  </div>
 </div>
+ 
+    <%# !-- Button trigger modal --> %>
+<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal"> 
+  Add Photos <i class="fa fa-plus" aria-hidden="true"></i>
+</button>
 
-<%= form_with(model: @album) do |form| %>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> ADD PHOTOS </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= form_with(model: @album) do |form| %>
   <div class="field mt-4">
     <%= form.label :Photos %>
     <%= form.file_field :photos, :multiple => true ,class: 'form-control' %>
@@ -54,7 +68,15 @@
   <div class="actions mt-4 ">
     <%= form.submit  %>
   </div>
-<% end %>
+ <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 
 
 

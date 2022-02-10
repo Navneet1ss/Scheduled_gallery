@@ -1,29 +1,17 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Albums</h1>
-
-<%= search_form_for @q do |f| %>
-  <%= f.label :title_cont %>
-  <%= f.search_field :title_cont %>
-  <%= f.submit %>
-<% end %>
-
 <div class='row'>
-    <% @albums.each do |album| %>
- <div class='col-md-4'>
+  <% @albums.each do |album| %>
+  <div class='col-md-4'>
     <div class='card'>
       <div class='card-header active'><strong>Title:</strong>
         <%= album.title %> 
       </div>
       <div class='card-header color'><strong>Description:</strong>
         <%= album.description %>
-
-        </div>
-       
-       <div class='card-body'>
+      </div>
+      <div class='card-body'>
           <%if album.cover_photo.attached? %>
-
-
           <%= link_to album do%>
           <%= image_tag (album.cover_photo) %>
        </div>
@@ -32,10 +20,8 @@
       </div>
       <div class='card-footer'>
          <%= link_to  edit_album_path(album)   do %>  <i class="fas fa-edit fa-2x mx-3  icon-cog" style="color:black "> </i> <%end%>
-         <%= link_to  album, method: :delete, data: { confirm: 'Are you sure?' }   do %> <i class="far fa-trash-alt fa-2x  icon-cog" style="color:black"> </i>  <%end%>
-        
+         <%= link_to  album, method: :delete, data: { confirm: 'Are you sure?' }   do %> <i class="far fa-trash-alt fa-2x  icon-cog" style="color:black"> </i>  <%end%> 
       </div>
-    
     </div>
   <% end %>
 </div>

@@ -11,18 +11,21 @@
      <div class='card-header active'><strong>Title:</strong>
         <%= album.title %> 
       </div>
+    
+
       <div class='card-header color'><strong>Description:</strong>
           <%= album.description %>
+      
       </div>
+        <div class="card-header "><strong>Tags:</strong> 
+      <%= album.all_tags %>
+      </div>
+      
       <div class='card-body'>
          <%= link_to home_path(id: album.id) do%>
          <%= image_tag (album.cover_photo) %>
       </div>
       <%end%>
-
-
-      <div class="card-footer"><strong>Tags:</strong> <%= album.all_tags %></div>
-
       
     </div>
   </div>
