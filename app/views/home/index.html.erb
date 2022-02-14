@@ -22,9 +22,13 @@
       </div>
       
       <div class='card-body'>
+         <%if album.cover_photo.attached?%>
          <%= link_to home_path(id: album.id) do%>
          <%= image_tag (album.cover_photo) %>
+         <%end%>
+        
       </div>
+     
       <%end%>
       
     </div>
