@@ -75,3 +75,15 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
+
+
+config.acytion_mailer.default_url_options={host: "https://galleryapp77.herokuapp.com/"}
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  :user_name => 'd0a19b9ee664b8',
+  :password => '68f78b79d07270',
+  :address => 'smtp.mailtrap.io',
+  :domain => 'smtp.mailtrap.io',
+  :port => '2525',
+  :authentication => :cram_md5
+}
