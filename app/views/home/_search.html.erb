@@ -2,5 +2,8 @@
   <%= search_form_for @q, url: search_home_index_path,
                           html: { method: :post } do |f| %>
      <%= f.search_field :tags_name_eq %> 
-     <%=f.submit "search" %> <% end %>
+     <%=f.submit "search" %> 
+     
+      <% end %>
+
   </div>

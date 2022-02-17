@@ -7,7 +7,7 @@
 <div class='row'>
  <% @albums.each do |album| %>
  <div class='col-md-4'>
-    <div class='card'>
+    <div class='card '>
      <div class='card-header active'><strong>Title:</strong>
         <%= album.title %> 
       </div>
@@ -21,10 +21,11 @@
       <%= album.all_tags %>
       </div>
       
-      <div class='card-body'>
+      <div class='card-body '>
+      
          <%if album.cover_photo.attached?%>
          <%= link_to home_path(id: album.id) do%>
-         <%= image_tag (album.cover_photo) %>
+         <div class ="image"><%= image_tag (album.cover_photo) %> </div>
          <%end%>
         
       </div>

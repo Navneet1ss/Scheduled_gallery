@@ -1,7 +1,7 @@
 <section class="vh-50" >
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-6">
         <div class="card shadow-2-strong" style="border-radius: 1rem;">
           <div class="card-body p-5 text-center">
 
@@ -9,10 +9,11 @@
 
 
 <h2>Log in</h2>
+<br/>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field mt-4">
-    <%= f.label :email %><br />
+    <%= f.label :email %><br/>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'form-control active' %>
   </div>
 
